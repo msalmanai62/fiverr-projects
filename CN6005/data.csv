@@ -1,0 +1,11 @@
+,Student,Salary,Studies,Credit rating,CLASS(Buys a car)
+0,Is_a_student,>20k,Computer Science,Fair,NO
+1,Not_a_student,<20k,Computer Science,Good,NO
+2,Is_a_student,>20k,Maths,Excellent,NO
+3,Is_a_student,>20k,Engineering,Fair,MAYBE
+4,Is_a_student,>20k,Maths,Good,MAYBE
+5,Not_a_student,>20k,Engineering,Excellent,YES
+6,Is_a_student,>20k,Maths,Fair,YES
+7,Not_a_student,<20k,Computer Science,Good,YES
+8,Is_a_student,<20k,Computer Science,Fair,NO
+9,Is_a_student,<20k,Maths,Excellent,MAYBE

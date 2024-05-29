@@ -1,0 +1,32 @@
+READING data file play_tennis-train.csv...
+---------------------------------------
+RANDOM VARIABLES=['O', 'T', 'H', 'W', 'PT']
+VARIABLE KEY VALUES={'O': ['sunny', 'overcast', 'rain'], 'T': ['hot', 'mild', 'cool'], 'H': ['high', 'normal'], 'W': ['weak', 'strong'], 'PT': ['no', 'yes']}
+VARIABLE VALUES=[['sunny', 'hot', 'high', 'weak', 'no'], ['sunny', 'hot', 'high', 'strong', 'no'], ['overcast', 'hot', 'high', 'weak', 'yes'], ['rain', 'mild', 'high', 'weak', 'yes'], ['rain', 'cool', 'normal', 'weak', 'yes'], ['rain', 'cool', 'normal', 'strong', 'no'], ['overcast', 'cool', 'normal', 'strong', 'yes'], ['sunny', 'mild', 'high', 'weak', 'no'], ['sunny', 'cool', 'normal', 'weak', 'yes'], ['rain', 'mild', 'normal', 'weak', 'yes'], ['sunny', 'mild', 'normal', 'strong', 'yes'], ['overcast', 'mild', 'high', 'strong', 'yes'], ['overcast', 'hot', 'normal', 'weak', 'yes'], ['rain', 'mild', 'high', 'strong', 'no']]
+PREDICTOR VARIABLE=PT
+|data instances|=14
+
+ESTIMATING countings...
+WARNING: missing count for variables=overcast|no
+countings={'O': {'sunny|no': 3, 'overcast|yes': 4, 'rain|yes': 3, 'rain|no': 2, 'sunny|yes': 2, 'overcast|no': 1e-06}, 'T': {'hot|no': 2, 'hot|yes': 2, 'mild|yes': 4, 'cool|yes': 3, 'cool|no': 1, 'mild|no': 2}, 'H': {'high|no': 4, 'high|yes': 3, 'normal|yes': 6, 'normal|no': 1}, 'W': {'weak|no': 2, 'strong|no': 3, 'weak|yes': 6, 'strong|yes': 3}, 'PT': {'no': 5, 'yes': 9}}
+
+ESTIMATING probabilities...
+P(O)=>{'sunny|no': 0.6, 'overcast|yes': 0.4444444444444444, 'rain|yes': 0.3333333333333333, 'rain|no': 0.4, 'sunny|yes': 0.2222222222222222, 'overcast|no': 2e-07}      SUM=2.000000
+P(T)=>{'hot|no': 0.4, 'hot|yes': 0.2222222222222222, 'mild|yes': 0.4444444444444444, 'cool|yes': 0.3333333333333333, 'cool|no': 0.2, 'mild|no': 0.4}    SUM=2.000000
+P(H)=>{'high|no': 0.8, 'high|yes': 0.3333333333333333, 'normal|yes': 0.6666666666666666, 'normal|no': 0.2}      SUM=2.000000
+P(W)=>{'weak|no': 0.4, 'strong|no': 0.6, 'weak|yes': 0.6666666666666666, 'strong|yes': 0.3333333333333333}      SUM=2.000000
+P(PT)=>{'no': 0.35714285714285715, 'yes': 0.6428571428571429}   SUM=1.000000
+
+READING data file play_tennis-test.csv...
+---------------------------------------
+RANDOM VARIABLES=['O', 'T', 'H', 'W', 'PT']
+VARIABLE KEY VALUES={'O': ['sunny'], 'T': ['cool'], 'H': ['high'], 'W': ['strong'], 'PT': ['?']}
+VARIABLE VALUES=[['sunny', 'cool', 'high', 'strong', '?']]
+PREDICTOR VARIABLE=PT
+|data instances|=1
+
+EVALUATING on test data...
+Input vector=['sunny', 'cool', 'high', 'strong', '?']
+UNNORMALISED DISTRIBUTION={'no': 0.02057142857142857, 'yes': 0.005291005291005291}
+NORMALISED DISTRIBUTION={'no': 0.795417348608838, 'yes': 0.20458265139116202}
+---

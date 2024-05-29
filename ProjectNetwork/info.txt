@@ -1,0 +1,11 @@
+the project should contains a database that contains:
+user table:
+ID:19461456
+Passowrd:1234
+
+inputData table : ( the dataset)
+
+ResultsTable:( for each model,time,accuracy,..)
+model info table (information about the models)
+
+you can add any neccery tables u see.

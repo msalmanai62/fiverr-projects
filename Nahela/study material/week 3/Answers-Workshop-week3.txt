@@ -1,0 +1,48 @@
+TASK 1a. 
+X2test: Vi=Smoking, Vj=Coughing, pa_i=[Lung_cancer], p=0.7671012800093508
+X2test: Vi=Smoking, Vj=Car_Accident, pa_i=[Lung_cancer], p=0.0014907494227590708
+X2test: Vi=Anxiety, Vj=Fatigue, pa_i=[Lung_cancer], p=0.5415312973677251
+X2test: Vi=Anxiety, Vj=Attention_Disorder, pa_i=[Lung_cancer], p=0.5455073298298794
+X2test: Vi=Allergy, Vj=Fatigue, pa_i=[Lung_cancer], p=0.00019816255654477968
+
+TASK 1b. 
+The following edges can be removed according to a significance level of 0.05:
+Vi=Smoking, Vj=Coughing, pa_i=[Lung_cancer]
+Vi=Anxiety, Vj=Fatigue, pa_i=[Lung_cancer]
+Vi=Anxiety, Vj=Attention_Disorder, pa_i=[Lung_cancer]
+
+TASK 1c. 
+Same as TASK 1b.
+
+
+
+TASK 2a.
+LL score=-10009.003678521954
+
+TASK 2b. 
+BIC score=-10177.20774742503
+
+TASK 2c. 
+COMPUTING performance on test data...
+Balanced Accuracy=0.7691328279563574
+F1 Score=0.8647887323943662
+Area Under Curve=0.8787878787878788
+Brier Score=0.13440325637483394
+KL Divergence=114.57835666078407
+Training Time=0.010044574737548828 secs.
+Inference Time=0.17235469818115234 secs.
+
+
+
+TASK 3.
+Diagram (a):
+DETECTING cycles in graph [('PT', 'O'), ('PT', 'T'), ('PT', 'H'), ('PT', 'W'), ('O', 'T'), ('T', 'H'), ('O', 'W')]
+No cycles found!
+
+Diagram (b):
+DETECTING cycles in graph [('PT', 'O'), ('PT', 'T'), ('PT', 'H'), ('W', 'PT'), ('O', 'T'), ('T', 'H'), ('O', 'W')]
+Cycle found:['PT', 'O', 'W']
+
+
+TASK 4.
+Up to you.

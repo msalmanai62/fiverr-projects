@@ -1,0 +1,13 @@
+CN6005_2k24 ---> comparison of ANN, CNN, and Decision tree on car evaluation data (ML)
+Moon Lander CE889---> neural network from scratch
+Spotify ---> data analysis( visulaization, linear regression, Decision tree, logistic regression)
+stock data ---> data analysis and dimentionality reduction using PCA
+nahela --> bayes nets and gaussian process from scratch
+CN6005 --> deep learning question paper
+cancer risk --> python basics assignment
+world happiness index --> python
+Grace --> Machine Learning and deep learning and data analysis
+attendance system ---> python, opencv
+project network ---> ML, tkinter, algorithms performance comparison
+GAN---> generative adversarial nets to generate synthetic data
+n-grams --> sequence modeling, noveling sequences

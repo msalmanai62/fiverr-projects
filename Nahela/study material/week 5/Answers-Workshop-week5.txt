@@ -1,0 +1,109 @@
+TASK 1a.
+Outputs from the script provided in this task:
+x=0 f(x)_v1=6.655759025999826e-07 f(x)_v2=6.655759025999814e-07
+x=1 f(x)_v1=9.250445860603243e-05 f(x)_v2=9.250445860603242e-05
+x=2 f(x)_v1=0.004145930239828833 f(x)_v2=0.004145930239828836
+x=3 f(x)_v1=0.059920518610605704 f(x)_v2=0.05992051861060571
+x=4 f(x)_v1=0.27926942148327283 f(x)_v2=0.2792694214832728
+x=5 f(x)_v1=0.41972559734224435 f(x)_v2=0.4197255973422443
+x=6 f(x)_v1=0.20342380572419555 f(x)_v2=0.20342380572419552
+x=7 f(x)_v1=0.0317930609592363 f(x)_v2=0.03179306095923628
+x=8 f(x)_v1=0.0016023491678576664 f(x)_v2=0.0016023491678576677
+x=9 f(x)_v1=2.6042113310168373e-05 f(x)_v2=2.6042113310168322e-05
+
+Yes. Since the mean is 4.86, x=5 (close to the mean) has the highest probability density.
+
+
+TASK 1b.
+A bell curve (Gaussian distribution) can be observed from the 1000 sampled values.
+
+
+TASK 1c.
+Three plots, Gaussian distributed, can be observed exhibiting positive/negative/no covariance.
+The latter refers to how much random variables differ between them (2 variables in this example).
+
+
+
+TASK 2a.
+1D data: kernel(X, X)= [[1.00000000e+00 6.06530660e-01 4.39369336e-02 1.11089965e-02
+  3.35462628e-04]
+ [6.06530660e-01 1.00000000e+00 3.24652467e-01 1.35335283e-01
+  1.11089965e-02]
+ [4.39369336e-02 3.24652467e-01 1.00000000e+00 8.82496903e-01
+  3.24652467e-01]
+ [1.11089965e-02 1.35335283e-01 8.82496903e-01 1.00000000e+00
+  6.06530660e-01]
+ [3.35462628e-04 1.11089965e-02 3.24652467e-01 6.06530660e-01
+  1.00000000e+00]]
+
+2D data: kernel(A, B)= [[0.38218519]
+ [0.94039996]]
+
+In the case of the kernel using 1D data, it can be noted that the closer the values in the 
+input vector (X) the closer the kernel values. For example, the values 3.4 and 4 exhibit a
+kernel value of 0.8825. Thus, the closer the inputs the higher their kernel values.
+
+Regarding the 2D data (A=[[0.36, 0.11],[1.48, 0.55]] B=[[1.50, 0.90]]), vector [1.48, 0.55] 
+is more similar to [1.50, 0.90] and therefore the kernel value is higher (0.94039996) than 
+the other pair of vectors, i.e., [0.36, 0.11] and [1.50, 0.90]. 
+
+
+TASK 2b.
+python GaussianProcess.py ..\data\data-linearlyseparable-train.csv ..\data\data-linearlyseparable-test.csv
+COMPUTING performance on test data...
+Balanced Accuracy=0.995
+F1 Score=0.9949748743718593
+Area Under Curve=1.0
+Brier Score=0.008498720858535503
+KL Divergence=6.516947346470939
+Training Time=this number should come from the CPT_Generator!
+Running Time=0.0941159725189209 secs.
+
+python GaussianProcess.py ..\data\data-nonlinearlyseparable-train.csv ..\data\data-nonlinearlyseparable-test.csv
+COMPUTING performance on test data...
+Balanced Accuracy=0.9446444644464447
+F1 Score=0.9424083769633508
+Area Under Curve=0.9957995799579957
+Brier Score=0.06902970771233624
+KL Divergence=30.183436153967264
+Training Time=this number should come from the CPT_Generator!
+Running Time=0.10974764823913574 secs.
+
+python GaussianProcess.py ..\data\data_banknote_authentication-train.csv ..\data\data_banknote_authentication-test.csv
+COMPUTING performance on test data...
+Balanced Accuracy=1.0
+F1 Score=1.0
+Area Under Curve=1.0
+Brier Score=0.00516874681910774
+KL Divergence=3.2230168767492815
+Training Time=this number should come from the CPT_Generator!
+Running Time=5.711430072784424 secs.
+
+
+TASK 2c.
+The two variants are implemented as follows:
+            if self.baseline_variant1: 
+                prob = float((mu[i]-_min)/(_max-_min))
+            else:
+                pdf_1 = self.get_gaussian_probability_density(1, self.mu[i], var[i])
+                pdf_0 = self.get_gaussian_probability_density(0, self.mu[i], var[i])
+                prob = pdf_1 / (pdf_1 + pdf_0)
+
+Variant 1 has been set to False as default due to producing better results across datasets.
+The second variant also makes use of the two parameters in a gaussian: mean and variance.
+
+
+TASK 2d.
+Overall, worse results can be obtained than the optimised ones. Thus, it is better to 
+let the program find the best hyperparameters. But the provided program only optimises 
+l_opt (smoothness of the function), sigma_f_opt (vertical variation in the uncertainty region) -- 
+the noise value is currently defined manually and not part of the optimisation.
+
+
+TASK 2e.
+This requires your attention (to familiarise with the code) and there is no concrete answer.
+
+
+
+TASK 3.
+Up to you.

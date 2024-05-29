@@ -1,0 +1,97 @@
+Dealing and Exploring Data without using libraries
+
+######################################### Reading data
+
+import os
+import sys
+file_path = 'world_happiness_index_2013_2023.csv'
+
+if not os.path.isfile(file_path):  # check if the file is available or not
+    print("File not found.")
+    sys.exit()
+data = [] # we will store our data in list 
+with open(file_path, 'r') as file:   # open file in read mode
+    for line in file: # iterate through each line
+        row = line.strip().split(',')  # split the line at comma
+        data.append(row) # append each row in the data list
+# in above code we opened file in read mode and store it as lists within list. Each list represent a row
+
+##################### printing top 10 ####################
+
+# separate the header row and data rows
+header = data[0]
+data_ = data[1:]
+
+# create a dictionary for storing countries year 
+countries_by_year = {}
+
+for row in data_:
+    country, year, index, rank = row
+    if year not in countries_by_year:
+        countries_by_year[year] = []
+    
+    if index != '' and rank != '':
+        countries_by_year[year].append({'Country': country, 'Index': float(index)})
+
+# # Print top 10 happiest countries for each year
+for year in sorted(countries_by_year.keys()):
+    print(f"Top 10 happiest countries in {year}:")
+    top_10 = sorted(countries_by_year[year], key=lambda x: x['Index'], reverse=True)[:10]
+    for idx, country_data in enumerate(top_10, start=1):
+        print(f"{idx}. {country_data['Country']} - Index: {country_data['Index']}")
+    print("\n")
+
+################### print top 3 least happiest countries
+
+for year in sorted(countries_by_year.keys()):
+    print(f"Top 3 Least happiest countries in {year}:")
+    least_3 = sorted(countries_by_year[year], key=lambda x: x['Index'], reverse=False)[:3]
+    for idx, country_data in enumerate(least_3, start=1):
+        print(f"{idx}. {country_data['Country']} - Index: {country_data['Index']}")
+    print("\n")
+
+
+#################### selection sort Ascending #############
+a = [2, 4, 1, 3, 7]
+b = ['a', 'b', 'c', 'd', 'e']
+
+# Create a list of tuples pairing elements from lists a and b
+paired_lists = list(zip(a, b))
+
+# Perform a selection sort on list a and synchronize the sorting on list b
+for i in range(len(a)):
+    min_index = i
+    for j in range(i + 1, len(a)):
+        if paired_lists[j][0] < paired_lists[min_index][0]:
+            min_index = j
+    # Swap elements in the paired list
+    paired_lists[i], paired_lists[min_index] = paired_lists[min_index], paired_lists[i]
+
+# Extract the sorted elements from list b
+sorted_b = [pair[1] for pair in paired_lists]
+print(sorted(a))
+print(sorted_b)
+
+#################### selection sort descending #############
+
+a = [2, 4, 1, 3, 7]
+b = ['a', 'b', 'c', 'd', 'e']
+
+# Create a list of tuples pairing elements from lists a and b
+paired_lists = list(zip(a, b))
+
+# Perform a selection sort on list a and synchronize the sorting on list b in descending order
+for i in range(len(a)):
+    max_index = i
+    for j in range(i + 1, len(a)):
+        if paired_lists[j][0] > paired_lists[max_index][0]:
+            max_index = j
+    # Swap elements in the paired list
+    paired_lists[i], paired_lists[max_index] = paired_lists[max_index], paired_lists[i]
+
+# Extract the sorted elements from list b
+sorted_b = [pair[1] for pair in paired_lists]
+
+print(sorted(a, reverse=True))   # Output: [7, 4, 3, 2, 1]
+print(sorted_b)    # Output: ['e', 'b', 'd', 'a', 'c']
+

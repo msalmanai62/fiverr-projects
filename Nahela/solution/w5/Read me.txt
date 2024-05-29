@@ -1,0 +1,4 @@
+Folder BayesNet ---> implementation of bayes nets
+Folder Gaussian Process ---> Impelementation of Gaussian Process
+the name of configuration files(in BayesNet Folder) are d-c.txt and d-cc.txt with two diffenet structures
+report.docx is report file 

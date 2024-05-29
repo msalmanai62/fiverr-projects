@@ -1,0 +1,10 @@
+1. CPT_Generator.py provided since the workshop of week 2
+2. BayesNetExactInference.py provided during the workshop of week 2 or 
+	the program BayesNetInference.py provided during the workshop of week 4.
+3. *_data-original-train.csv
+4. *_data-original-train.csv
+5. ModelEvaluator.py, delivered during the workshop of week 3,
+6. materials of week 5 see file workshop-w5-updated*ModelEvaluator.zip*.
+7. *-original-train.csv
+8. * -original-test.csv
+9. GaussianProcess.py 

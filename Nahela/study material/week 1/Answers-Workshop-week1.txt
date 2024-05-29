@@ -1,0 +1,39 @@
+TASK 1.
+What is the probability of not having measles given that a person has a rash? 
+In other words, P(⌐m|r) = P(¬m, r) / P(r) = 0.8 / 0.9 = 0.888
+
+What is the probability of having measles given that a person has a rash? 
+In other words, P(m|r) = P(m, r) / P(r) =  0.1 / 0.9 = 0.111
+
+
+
+TASK 2a. Answer provided in the workshop brief.
+
+TASK 2b.
+We know the following from the brief:
+P(d)=1/10000=0.0001
+P(t|d) =0.99
+P(¬t|¬d) =0.95
+
+We are asked to calculate P(d|t). Using the Bayes rule we know that
+P(d|t)= ( P(t|d)*P(d) ) / P(t)
+
+We don't know P(t) but from marginal probabilities we know that P(t)=P(t,d)+P(t,-d).
+
+From joint probabilities and the product rule we know that
+P(t,d)=P(t|d)*P(d)=0.99*0.0001=0.000099
+P(t,-d)=P(t|-d)*P(-d)=0.05*0.9999=0.049995
+
+Thus, P(t)=P(t∧d)+P(t∧-d)=0.000099+0.049995=0.050094
+
+Finally, we can now calculate the P(d|t) as follows:
+P(d|t)=( P(t|d)*P(d) ) / P(t)=(0.99*0.0001)/0.050094=0.00198
+
+
+
+TASK 3a and 3b.
+Download NB_Classifier.zip from Blackboard and follow the details in the workshop description.
+
+TASK 3c.
+An example implementation of Laplacian Smoothing is provided in the workshop materials of week 2 onwards.
+Look at class CPT_Generator, method generate_probabilities_from_countings(), variable Jl.
